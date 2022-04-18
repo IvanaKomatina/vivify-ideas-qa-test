@@ -12,6 +12,10 @@ class Galleries {
         return cy.get('h1')
     }
 
+    get CreateGalleryHeading() {
+        return cy.get('h1')
+    }
+
     get TitleInput() {
         return cy.get('input[id="title"]')
     }
@@ -46,6 +50,22 @@ class Galleries {
 
     get AddImageBtn() {
         return cy.contains('Add image')
+    }
+
+    get EditGalleryBtn() {
+        return cy.contains('Edit Gallery')
+    }
+
+    get EditGalleryTitle() {
+        return cy.get('h1')
+    }
+
+    get ErrorMessage() {
+        return cy.get('p[class="alert alert-danger"]')
+    }
+
+    get TrashBtn() {
+        return cy.get('button > .fa-trash')
     }
 
     Gallery(title,description,url) {
