@@ -31,7 +31,6 @@ Cypress.Commands.add('generateFixture', () => {
         'Title': faker.name.jobTitle(),
         'Description' : faker.lorem.paragraph(1),
         'Image1' : "https://krstarica.name/wp-content/uploads/2021/05/pas-1-750x430.jpg",
-        'Image2' : "https://ichef.bbci.co.uk/news/640/cpsprodpb/1799D/production/_107096669_pawwavingpup.jpg",
-        'Image3' : "https://www.zenskimagazin.rs/storage/posts/seo/2021/Mar/155752/koje-orasaste-plodove-psi-smeju-da-jedu.jpeg"
+        'Image2' : "https://ichef.bbci.co.uk/news/640/cpsprodpb/1799D/production/_107096669_pawwavingpup.jpg"
     })
 })
