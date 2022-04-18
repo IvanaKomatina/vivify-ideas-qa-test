@@ -28,7 +28,7 @@ Cypress.Commands.add('generateFixture', () => {
     const { faker } = require('@faker-js/faker')
 
     cy.writeFile('cypress/fixtures/gallery.json', {
-        'Title': faker.name.Title(),
+        'Title': faker.name.jobTitle(),
         'Description' : faker.lorem.paragraph(1),
         'Image1' : "https://krstarica.name/wp-content/uploads/2021/05/pas-1-750x430.jpg",
         'Image2' : "https://ichef.bbci.co.uk/news/640/cpsprodpb/1799D/production/_107096669_pawwavingpup.jpg",
