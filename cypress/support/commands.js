@@ -29,8 +29,10 @@ Cypress.Commands.add('generateFixture', () => {
 
     cy.writeFile('cypress/fixtures/gallery.json', {
         'Title': faker.name.jobTitle(),
-        'Description' : faker.lorem.paragraph(1),
-        'Image1' : "https://krstarica.name/wp-content/uploads/2021/05/pas-1-750x430.jpg",
-        'Image2' : "https://ichef.bbci.co.uk/news/640/cpsprodpb/1799D/production/_107096669_pawwavingpup.jpg"
+        'Description': faker.lorem.paragraph(1),
+        'Image1': 'https://krstarica.name/wp-content/uploads/2021/05/pas-1-750x430.jpg',
+        'Image2': 'https://ichef.bbci.co.uk/news/640/cpsprodpb/1799D/production/_107096669_pawwavingpup.jpg',
+        'InvalidImage1': 'https://krstarica.name/wp-content/uploads/2021/05/pas-1-750x430.com',
+        'InvalidImage2': 'https://www.google.com.jpg'
     })
 })

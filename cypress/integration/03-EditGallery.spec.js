@@ -36,12 +36,14 @@ describe('Edit Gallery', () => {
     })
 
     it('Edit gallery without valid image extension', () => {
-        navigation.MyGalleriesBtn.click()
-        galleries.FirstGalleryTitle.click()
-        galleries.EditGalleryBtn.click()
-        galleries.ImageInput.clear()
-        galleries.Gallery("", "" , "https://krstarica.name/wp-content/uploads/2021/05/pas-1-750x430.com")
-        galleries.ErrorMessage.should('have.text', 'Wrong format of image')
+        cy.fixture('gallery').then(galleryData => {
+            navigation.MyGalleriesBtn.click()
+            galleries.FirstGalleryTitle.click()
+            galleries.EditGalleryBtn.click()
+            galleries.ImageInput.clear()
+            galleries.Gallery("", "" , galleryData.InvalidImage1)
+            galleries.ErrorMessage.should('have.text', 'Wrong format of image')
+        })
     })
 
     it('Edit gallery with invalid url', () => {
@@ -81,7 +83,7 @@ describe('Edit Gallery', () => {
             galleries.TitleInput.clear()
             galleries.DescriptionInput.clear()
             galleries.ImageInput.clear()
-            galleries.Gallery(galleryData.Title, galleryData.Description, "https://www.google.com.jpg")
+            galleries.Gallery(galleryData.Title, galleryData.Description, galleryData.InvalidImage2)
             galleries.ErrorMessage.should('have.text', 'The image does not exist.')
         })
     })
