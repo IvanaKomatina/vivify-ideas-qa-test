@@ -14,6 +14,7 @@ describe('Create gallery', () => {
     it('Create gallery without description', () => {
         cy.fixture('gallery').then(galleryData => {
             galleries.CreateGalleryBtn.click()
+            galleries.CreateGalleryTitle.should('have.text', 'Create Gallery')
             galleries.Gallery(galleryData.Title, "" , galleryData.Image1)
             galleries.FirstImage.should($el => expect($el.text().trim()).to.equal(galleryData.Title))
             galleries.FirstImage.click()
