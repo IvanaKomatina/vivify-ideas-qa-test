@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^9.5.4"
+  },
+  "name": "vivify-ideas-qa-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
