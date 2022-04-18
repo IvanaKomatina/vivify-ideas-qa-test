@@ -12,24 +12,22 @@ describe('Edit Gallery', () => {
     })
 
     it('Edit gallery without title', () => {
-            navigation.MyGalleriesBtn.click()
-            galleries.FirstImage.click()
-            galleries.EditGalleryBtn.click()
-            galleries.EditGalleryTitle.should('have.text', 'Edit Gallery')
-            galleries.TrashBtn.eq(1).click()
-            galleries.TitleInput.clear()
-            galleries.Gallery("" , "" , "")
-            galleries.TitleInput.then(($input) => {
-                expect($input[0].validationMessage).to.eq('Please fill out this field.')
-            })
+        navigation.MyGalleriesBtn.click()
+        galleries.FirstGalleryTitle.click()
+        galleries.EditGalleryBtn.click()
+        galleries.EditGalleryTitle.should('have.text', 'Edit Gallery')
+        galleries.TitleInput.clear()
+        galleries.Gallery("" , "" , "")
+        galleries.TitleInput.then(($input) => {
+            expect($input[0].validationMessage).to.eq('Please fill out this field.')
+        })
 
     })
 
     it('Edit gallery without url', () => {
         navigation.MyGalleriesBtn.click()
-        galleries.FirstImage.click()
+        galleries.FirstGalleryTitle.click()
         galleries.EditGalleryBtn.click()
-        galleries.TrashBtn.eq(1).click()
         galleries.ImageInput.clear()
         galleries.Gallery("", "", "")
         galleries.ImageInput.then(($input) => {
@@ -39,9 +37,8 @@ describe('Edit Gallery', () => {
 
     it('Edit gallery without valid image extension', () => {
         navigation.MyGalleriesBtn.click()
-        galleries.FirstImage.click()
+        galleries.FirstGalleryTitle.click()
         galleries.EditGalleryBtn.click()
-        galleries.TrashBtn.eq(1).click()
         galleries.ImageInput.clear()
         galleries.Gallery("", "" , "https://krstarica.name/wp-content/uploads/2021/05/pas-1-750x430.com")
         galleries.ErrorMessage.should('have.text', 'Wrong format of image')
@@ -49,9 +46,8 @@ describe('Edit Gallery', () => {
 
     it('Edit gallery with invalid url', () => {
         navigation.MyGalleriesBtn.click()
-        galleries.FirstImage.click()
+        galleries.FirstGalleryTitle.click()
         galleries.EditGalleryBtn.click()
-        galleries.TrashBtn.eq(1).click()
         galleries.ImageInput.clear()
         galleries.Gallery("" , "" , "www.google.com")
         galleries.ImageInput.then(($input) => {
@@ -62,9 +58,8 @@ describe('Edit Gallery', () => {
     it('Edit gallery without title and url', () => {
         cy.fixture('gallery').then(galleryData => {
             navigation.MyGalleriesBtn.click()
-            galleries.FirstImage.click()
+            galleries.FirstGalleryTitle.click()
             galleries.EditGalleryBtn.click()
-            galleries.TrashBtn.eq(1).click()
             galleries.TitleInput.clear()
             galleries.ImageInput.clear()
             galleries.Gallery("" , galleryData.Description, "")
@@ -81,9 +76,8 @@ describe('Edit Gallery', () => {
     it('Edit gallery with no existing image', () => {
         cy.fixture('gallery').then(galleryData => {
             navigation.MyGalleriesBtn.click()
-            galleries.FirstImage.click()
+            galleries.FirstGalleryTitle.click()
             galleries.EditGalleryBtn.click()
-            galleries.TrashBtn.eq(1).click()
             galleries.TitleInput.clear()
             galleries.DescriptionInput.clear()
             galleries.ImageInput.clear()

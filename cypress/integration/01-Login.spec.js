@@ -6,7 +6,6 @@ import { galleries } from "../pageObject/galleries.js"
 describe('Login', () => {
     before(() => {
         cy.visit('')
-        cy.url().should('include', 'gallery-app')
         navigation.LoginBtn.click()
         cy.url().should('include', '/login')
         loginPage.LoginTitle.should('have.text', 'Please login')

@@ -32,7 +32,7 @@ class Galleries {
         return cy.contains('Submit')
     }
 
-    get FirstImage() {
+    get FirstGalleryTitle() {
         return cy.get('h2 > .box-title').first()
     }
 
@@ -62,10 +62,6 @@ class Galleries {
 
     get ErrorMessage() {
         return cy.get('p[class="alert alert-danger"]')
-    }
-
-    get TrashBtn() {
-        return cy.get('button > .fa-trash')
     }
 
     Gallery(title,description,url) {
